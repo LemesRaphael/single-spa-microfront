@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form 
+    #form="ngForm"
+    (ngSubmit)="enviar()">
+    <div class="container">
+        <div class="row">
+            <div class="col titulo">
+                <span>Em que podemos ajudar?</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="top">
+        <mat-card class="mat-card-component">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                            <mat-form-field class="col-12" appearance="outline">
+                              <mat-label>Email</mat-label>
+                              <input 
+                              class="form-control"
+                              type="email" 
+                              matInput 
+                              name="email" 
+                              required
+                              #emailValid="ngModel"
+                              [(ngModel)]="email"
+                              email
+                              placeholder="Ex. teste@example.com">
+                              <mat-error *ngIf="emailValid.errors?.required">Digite um email (Campo obrigatório)</mat-error>
+                              <mat-error *ngIf="emailValid.errors?.email">Digite um email válido</mat-error>
+                            </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="col-12" appearance="outline">
+                            <mat-label>Sugestões/Dúvidas</mat-label>
+                            <textarea name="text" #textArea="ngModel" [(ngModel)]="text" class="form-control" required minlength="10" matInput></textarea>
+                            <mat-error *ngIf="textArea.errors?.required">Digite uma Dúvida/Sugestão (Campo obrigatório)</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
+<br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col center" >
+                <button class="col-4" [disabled]="form.invalid" type="submit" mat-flat-button color="primary">
+                    ENVIAR
+                    <mat-icon>
+                        email
+                    </mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col center">
+                <span class="contato">Ou entre em contato com nosso suporte através do número (11)7070-7070. </span>
+                <span class="contato">Caso algo de errado, 70 novamente.</span>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

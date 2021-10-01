@@ -1,0 +1,93 @@
+
+
+<mat-card class="mat-card-component">
+    <form action="" #form="ngForm" (ngSubmit)="login()">
+        <div class="container">
+<br>
+            <div class="row">
+                <div class="col">
+                 <span class="bold">
+                    FAÇA LOGIN
+                 </span>  
+                </div>
+            </div>
+<br>
+            <div class="row">
+                <div class="col-3" >
+                    <label for="" style="text-align: left !important; padding-left: 20px;">Email</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="col-10" appearance="outline">
+                        <input placeholder="Ex. teste@example.com" class="form-control" type="email" email matInput
+                            name="email" [(ngModel)]="email" #emailValid="ngModel" required>
+                        <mat-error *ngIf="emailValid.errors?.required">
+                            Digite um email
+                        </mat-error>
+                        <mat-error *ngIf="emailValid.errors?.email">
+                            Digite um email válido
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label for="" style="text-align: left !important; padding-left: 20px;">Senha</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col center">
+                    <mat-form-field class="col-10" appearance="outline">
+                        <input name="password" [(ngModel)]="password" #passwordValid="ngModel" required
+                            class="form-control col-12" matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="passwordValid.errors?.required">
+                            Digite uma senha
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="show">
+                <div class="col center">
+                    <span style="color: red;">
+                        Úsuario ou senha inválidos
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <button mat-flat-button [disabled]="form.invalid" type="submit" class="col-10" color="primary">
+                        Login
+                    </button>
+                </div>
+            </div>
+
+            <br>
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-12">
+                        <a (click)="cadastro()" class="col-5">
+                            Primeiro acesso
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</mat-card>

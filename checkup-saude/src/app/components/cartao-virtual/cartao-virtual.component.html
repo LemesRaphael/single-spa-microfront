@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col titulo">
+                <span>Meu cartão virtual</span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <mat-card class="mat-card-component cartao-virtual">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <span class="cartao-content">CARTÃO SAÚDE</span>
+                    </div>
+                    <div class="col">
+                        <span style="float: right;" class="cartao-content">CNS: {{dados.cartao.cns}}</span>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col">
+                        <span style="font-size: 20px;" class="cartao-content bold">{{nome}} {{sobrenome}}</span>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col">
+                        <span class="cartao-content">Data Nasc: {{data_nascimento | mask: '00/00/0000'}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="cartao-content">CPF: {{cpf | mask: '000.000.000-00'}}</span>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</body>
+
+</html>

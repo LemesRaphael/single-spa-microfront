@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col titulo">
+                <span>Consultas agendadas</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="top" *ngIf="!consulta">
+        <mat-card class="mat-card-content" *ngFor="let consulta of carregarConsultas">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <span class="bold">Data/Hora: {{consulta.data}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="bold">Especialidade: </span><span>{{consulta.especialidade}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="bold">Profissional: </span><span>{{consulta.profissional}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="bold">Local: </span><span>{{consulta.localidade}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="bold">Situação: </span><span>{{consulta.situacao}}</span>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
+    <div *ngIf="consulta">
+        <mat-card class="mat-card-component">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <span class="bold">Nenhuma consulta agendada.</span>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</body>
+</html>

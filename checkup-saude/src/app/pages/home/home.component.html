@@ -1,0 +1,123 @@
+<app-header></app-header>
+<div class="card-home">
+    <mat-card>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('agenda-consulta')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                      event_note
+                                </mat-icon>
+                            </button>
+                            <span>Agende sua consulta!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('vacina-covid')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                        vaccines
+                                </mat-icon>
+                            </button>
+                            <span>Agende sua vacina covid</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('consultas-agendadas')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                       event
+                                </mat-icon>
+                            </button>
+                            <span>Consultas agendadas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<br>
+            <div class="row">
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('notificacao')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                        notifications
+                                </mat-icon>
+                            </button>
+                            <span>Notificações</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('carteira-vacinas')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                        account_balance_wallet
+                                </mat-icon>
+                            </button>
+                            <span>Carteira vacinação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pointer" (click)="historicoAtendimento()">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                    pending_actions
+                                </mat-icon>
+                            </button>
+                            <span>Histórico de atendimento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<br>
+            <div class="row">
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('cartao-virtual')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                        payment
+                                </mat-icon>
+                            </button>
+                            <span>Cartão virtual</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('avaliacao')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                        star_rate
+                                </mat-icon>
+                            </button>
+                            <span>Avaliação do atendimento</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pointer" (click)="navegar('suporte')">
+                        <div class="card-body">
+                            <button mat-icon-button>
+                                <mat-icon>
+                                    support_agent 
+                                </mat-icon>
+                            </button>
+                            <span>Sugestões/Dúvidas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

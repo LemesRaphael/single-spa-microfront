@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col center top">
+            <span class="font">Agendamento ainda não marcado. Para finalizar clique no botão</span>
+            <br>
+            <span class="font">"CONFIRMAR AGENDAMENTO"</span>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 2%;">
+        <div class="row">
+            <div class="col-3"></div>
+            <mat-card class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <span>{{nome}} {{sobrenome}}, agendamos a melhor data e horário para você:</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col center">
+                        <span class="bold">VACINA COVID - {{agenda.dose}}° DOSE</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col center">
+                        <span class="bold">{{agenda.data}}</span>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <mat-card class="col-6">
+                <div class="row">
+                    <div class="col center">
+                        <span>LOCAL DE VACINAÇÃO</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col center">
+                        <div>
+                            <mat-icon>
+                                room
+                            </mat-icon>
+                            <span style="vertical-align: top;">{{agenda.localidade}}</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col center">
+                        <div>
+                            <mat-icon>
+                                phone
+                            </mat-icon>
+                            <span style="vertical-align: top;">{{agenda.telefone}}</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </mat-card>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form action="" #form="ngForm">
+                    <mat-form-field class="col-12" appearance="outline">
+                        <input placeholder="Ex. teste@example.com" class="form-control" type="email" email matInput
+                            name="email" [(ngModel)]="email" #emailValid="ngModel" required>
+                        <mat-error *ngIf="emailValid.errors?.required">
+                            Digite um email
+                        </mat-error>
+                        <mat-error *ngIf="emailValid.errors?.email">
+                            Digite um email válido
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col-6">
+                            <button mat-flat-button (click)="agendar()" [disabled]="form.invalid" color="primary" class="col-12">
+                                CONFIRMAR AGENDAMENTO
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

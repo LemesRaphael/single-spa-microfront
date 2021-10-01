@@ -1,0 +1,19 @@
+mat-card {
+    text-align: center;
+    width: 50%;
+    margin: 5% auto !important;
+}
+
+.login-button {
+    margin-top: 5%;
+}
+
+input::placeholder {
+    color: #302F2F; 
+}
+
+a {
+    float: right;
+    text-decoration: none;
+    cursor: pointer;
+}

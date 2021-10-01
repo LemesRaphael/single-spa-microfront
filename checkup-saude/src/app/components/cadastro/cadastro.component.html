@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col titulo">
+                <span>Cadastro</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 5%;">
+        <div class="container">
+            <div class="row">
+                <mat-card>
+                    <form action="" #form="ngForm">
+                        <span class="bold">Dados pessoais e Login</span>
+                        <div class="row">
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Nome *" class="form-control" type="text" matInput name="nome"
+                                    [(ngModel)]="cadastro.nome" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Sobrenome *" class="form-control" type="text" matInput
+                                    name="sobrenome" [(ngModel)]="cadastro.sobrenome" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="CPF *" mask="000.000.000-00" class="form-control" type="text" matInput name="cpf"
+                                    [(ngModel)]="cadastro.cpf" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Data Nascimento *" class="form-control" type="text" matInput
+                                    name="data_nascimento" mask="00/00/0000" [(ngModel)]="cadastro.data_nascimento" required>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="row">
+                            <mat-form-field class="col-1" appearance="outline">
+                                <input placeholder="DDD *" mask="(00)" class="form-control"  matInput name="ddd"
+                                    [(ngModel)]="cadastro.ddd" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col-2" appearance="outline">
+                                <input placeholder="Celular *" mask="0 0000-0000" class="form-control" type="text" matInput name="celular"
+                                    [(ngModel)]="cadastro.celular" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Ex. teste@example.com *" class="form-control" type="email" email
+                                    matInput name="email" [(ngModel)]="cadastro.email" #emailValid="ngModel" required>
+                                <mat-error *ngIf="emailValid.errors?.required">
+                                    Digite um email
+                                </mat-error>
+                                <mat-error *ngIf="emailValid.errors?.email">
+                                    Digite um email válido
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input name="senha" placeholder="Senha *" [(ngModel)]="cadastro.senha"
+                                    #passwordValid="ngModel" required class="form-control" matInput
+                                    [type]="hide ? 'password' : 'text'">
+                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="passwordValid.errors?.required">
+                                    Digite uma senha
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <span class="span-top bold">Endereço</span>
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="CEP *" class="form-control" type="text" matInput name="cep"
+                                    (blur)="getCep()" [(ngModel)]="cadastro.cep" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Logradouro *" class="form-control" type="text" matInput
+                                    name="logradouro" [(ngModel)]="cadastro.logradouro" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="N° *" class="form-control" type="text" matInput name="numero_casa"
+                                    [(ngModel)]="cadastro.numero_casa" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Bairro *" class="form-control" type="text" matInput name="bairro"
+                                    [(ngModel)]="cadastro.bairro" required>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="row">
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Complemento *" class="form-control" type="text" matInput
+                                    name="complemento" [(ngModel)]="cadastro.complemento" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="Localidade *" class="form-control" type="text" matInput
+                                    name="localidade" [(ngModel)]="cadastro.localidade" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="col" appearance="outline">
+                                <input placeholder="UF *" class="form-control" type="text" matInput name="uf"
+                                    [(ngModel)]="cadastro.uf" required>
+                            </mat-form-field>
+                            <hr>
+
+                            <div class="row" style="text-align: end;">
+                                <div class="col-8"></div>
+                                <div class="col">
+                                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" mat-flat-button
+                                        [disabled]="form.invalid" class="col-12" color="primary">
+                                        Cadastrar
+                                    </button>
+                                </div>
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Confirme os dados Cadastrados</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancelar</button>
+                                           
+                                                <button mat-flat-button
+                                                 (click)="cadastrar()" data-bs-dismiss="modal" color="primary">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="col">
+                                    <button mat-flat-button (click)="voltar()" class="col-12" color="primary">
+                                        Voltar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
