@@ -7,7 +7,7 @@ export class MetodosAuxiliares {
     constructor(private router: Router) {}
 
     navegarTela(proxima_tela: string, tela_atual): void {
-        this.router.navigate([proxima_tela]);
+        this.router.navigate(['checkup-saude/' + proxima_tela]);
         this.setGlobalValue('voltar', 'checkup-saude/' + tela_atual);
     }
 

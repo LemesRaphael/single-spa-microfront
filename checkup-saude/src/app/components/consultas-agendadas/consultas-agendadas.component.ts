@@ -12,6 +12,8 @@ export class ConsultasAgendadasComponent implements OnInit {
 
   consultas: ConsultasModel[];
   carregarConsultas = JSON.parse(this.metodos.getGlobalValue('consultas'));
+  conteudo = new Array<ConsultasModel[]>();
+  nome = this.metodos.getGlobalValue('nome');
   
   consulta = true;
 
@@ -19,8 +21,13 @@ export class ConsultasAgendadasComponent implements OnInit {
 
   ngOnInit() {
     if(this.carregarConsultas) {
-      this.consulta = false;
-      console.log(this.carregarConsultas)
+      for (let consulta = 0; consulta < this.carregarConsultas.length; consulta++) {
+        const element = this.carregarConsultas[consulta];
+        if(element.nome == this.nome.toUpperCase()) {
+          this.conteudo.push(element);
+          this.consulta = false;
+        }
+      }
     }
   }
 }

@@ -93,11 +93,13 @@ export class CadastroComponent implements OnInit {
       if (!this.show) {
         aux.push(dadosLogin);
         this.metodos.setGlobalValue('dadosLogin', JSON.stringify(aux));
+        this.handleSuccess();
         this.metodos.voltar();
       }
     } else {
       this.arrayCadastro.push(dadosLogin);
       this.metodos.setGlobalValue('dadosLogin', JSON.stringify(this.arrayCadastro));
+      this.handleSuccess();
       this.metodos.voltar();
     }
   };
@@ -110,6 +112,15 @@ export class CadastroComponent implements OnInit {
     setTimeout(() => {
       this.bsModalRef.hide();
     }, 5000);
+  };
+
+  handleSuccess(): void {
+    this.bsModalRef = this.modalService.show(AlertComponent);
+    this.bsModalRef.content.message = 'Cadastro efetuado com sucesso!'
+
+    setTimeout(() => {
+      this.bsModalRef.hide();
+    }, 3000);
   };
 
   voltar(): void {

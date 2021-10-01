@@ -36,13 +36,13 @@ export class LoginComponentComponent implements OnInit {
     this.metodos.setGlobalValue('sobrenome', sobrenome);
     this.metodos.setGlobalValue('data_nascimento', data_nascimento);
     this.metodos.setGlobalValue('cpf', cpf);
-    this.metodos.navegarTela('checkup-saude/home', '');
+    this.metodos.navegarTela('home', '');
     } else {
       this.show = true;
     }
   }
 
   cadastro(): void {
-    this.metodos.navegarTela('checkup-saude/cadastro', '');
+    this.metodos.navegarTela('cadastro', '');
   }
 }

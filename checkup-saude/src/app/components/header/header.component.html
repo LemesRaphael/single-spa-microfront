@@ -1,6 +1,6 @@
 <mat-toolbar class="background">
     <mat-icon class="icon-color">face</mat-icon>
-    <span class="text-font user"> {{user.nome}} {{user.sobrenome}} </span>
+    <span *ngIf="!cadastro" class="text-font user"> {{user.nome}} {{user.sobrenome}} </span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with share icon">
       <mat-icon class="icon-color">logout</mat-icon>

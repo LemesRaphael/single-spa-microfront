@@ -11,6 +11,7 @@ import { UserModel } from 'src/app/shared/models/user-model';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() cadastro: boolean = false;
   user: UserModel = UserConstant;
   nome = this.metodos.getGlobalValue('nome');
   sobrenome = this.metodos.getGlobalValue('sobrenome');
@@ -22,6 +23,6 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(): void {
-    this.router.navigate(['checkup-saude/']);
+    this.router.navigate(['checkup-saude']);
   }
 }
