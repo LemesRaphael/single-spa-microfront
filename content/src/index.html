@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Container</title>
+  <title>Micro-FrontEnd</title>
   <base href="/">
   <meta name="importmap-type" content="systemjs-importmap" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,9 @@
 </head>
 <body>
   <app-root></app-root>
-  <import-map-overrides-full></import-map-overrides-full>
+  <!-- O import-map é uma forma de controlar de qual url baixar os módulos javascript.
+     A biblioteca import-map-overrides permite que você altere dinamicamente o url para módulos javascript,
+     armazenando substituições no armazenamento local. -->
+  <!-- <import-map-overrides-full></import-map-overrides-full> -->
 </body>
 </html>

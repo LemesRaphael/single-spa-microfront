@@ -12,7 +12,7 @@ if (environment.production) {
 
 singleSpaStart();
 
-const appId = 'container-app';
+const appId = 'content-app';
 
 
 platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule(AppModule)
