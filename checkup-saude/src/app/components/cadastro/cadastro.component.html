@@ -117,7 +117,7 @@
                             <div class="row" style="text-align: end;">
                                 <div class="col-8"></div>
                                 <div class="col">
-                                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" mat-flat-button
+                                    <button data-bs-toggle="modal" (click)="cadastrar()" mat-flat-button
                                         [disabled]="form.invalid" class="col-12" color="primary">
                                         Cadastrar
                                     </button>

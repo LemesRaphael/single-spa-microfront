@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col">
                         <mat-form-field class="col-12" appearance="outline">
-                            <mat-label>Sugestões/Dúvidas</mat-label>
+                            <mat-label>Sugestões/Dúvidas (Minimo 10 caracteres)</mat-label>
                             <textarea name="text" #textArea="ngModel" [(ngModel)]="text" class="form-control" required minlength="10" matInput></textarea>
                             <mat-error *ngIf="textArea.errors?.required">Digite uma Dúvida/Sugestão (Campo obrigatório)</mat-error>
                         </mat-form-field>
